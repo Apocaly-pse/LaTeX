@@ -1,6 +1,6 @@
-# $({L}^{\!\!A})\TeX$
+# LATeX
 
-Some LaTeX code. More about TikZ[^1]&beamer[^2].
+Some LaTeX code. More about TikZ&beamer.
 
 > environment:
 >
@@ -14,5 +14,6 @@ Some LaTeX code. More about TikZ[^1]&beamer[^2].
 
 ## Reference
 
-[^1]: Till Tantau, pgfmanual, 3.1.5b.
-[^2]: Beamer Userguide.
+1. Till Tantau, pgfmanual, 3.1.5b.
+
+2. Beamer Userguide.
