@@ -1,7 +1,7 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 20.7) (preloaded format=xelatex 2020.9.20)  27 SEP 2020 14:39
+This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 20.7) (preloaded format=xelatex 2020.9.20)  27 SEP 2020 15:35
 entering extended mode
-**"d:/Desktop/LaTeX/设计原则/1 指定坐标的句法/11.1-3.tex"
-("d:/Desktop/LaTeX/设计原则/1 指定坐标的句法/11.1-3.tex"
+**"d:/Desktop/LaTeX/设计原则/1 指定坐标的句法/11.1-5.tex"
+("d:/Desktop/LaTeX/设计原则/1 指定坐标的句法/11.1-5.tex"
 LaTeX2e <2020-02-02> patch level 5
 L3 programming layer <2020-09-03> (C:\MiKTeX\tex/latex/ctex\ctexart.cls
 (C:\MiKTeX\tex/latex/ctex/config\ctexbackend.cfg
@@ -523,8 +523,8 @@ File: pgfmodulematrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (C:\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarytopaths.code
 .tex
 File: tikzlibrarytopaths.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-))) (11.1-3.aux)
-\openout1 = `11.1-3.aux'.
+))) (11.1-5.aux)
+\openout1 = `11.1-5.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
 LaTeX Font Info:    ... okay on input line 4.
@@ -606,17 +606,17 @@ ABD: EveryShipout initializing macros
 LaTeX Font Info:    Font shape `TU/SimSun(0)/m/sl' in size <10.53937> not avail
 able
 (Font)              Font shape `TU/SimSun(0)/m/it' tried instead on input line 
-21.
+28.
  [1
 
-] (11.1-3.aux) ) 
+] (11.1-5.aux) ) 
 Here is how much of TeX's memory you used:
- 17263 strings out of 414480
- 412902 string characters out of 2910025
- 670814 words of memory out of 3000000
- 34250 multiletter control sequences out of 15000+200000
+ 17316 strings out of 414480
+ 414173 string characters out of 2910025
+ 671814 words of memory out of 3000000
+ 34303 multiletter control sequences out of 15000+200000
  536882 words of font info for 50 fonts, out of 3000000 for 9000
  1348 hyphenation exceptions out of 8191
- 60i,5n,69p,430b,376s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 60i,5n,69p,430b,564s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on 11.1-3.pdf (1 page).
+Output written on 11.1-5.pdf (1 page).
