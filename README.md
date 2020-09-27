@@ -1,4 +1,4 @@
-# LATeX
+# LaTeX
 
 Some LaTeX code. More about TikZ&beamer.
 
@@ -14,6 +14,6 @@ Some LaTeX code. More about TikZ&beamer.
 
 ## Reference
 
-1. Till Tantau, pgfmanual, 3.1.5b.
+1. Till Tantau, [pgfmanual](https://mirrors.tuna.tsinghua.edu.cn/CTAN/graphics/pgf/base/doc/pgfmanual.pdf), 3.1.5b.
 
-2. Beamer Userguide.
+2. [Beamer Userguide](https://mirrors.tuna.tsinghua.edu.cn/CTAN/macros/latex/contrib/beamer/doc/beameruserguide.pdf).

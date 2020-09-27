@@ -1,0 +1,21 @@
+\documentclass{ctexart}
+\usepackage{tikz}
+
+\begin{document}
+
+
+\section{11.1 指定坐标的句法}
+
+    \begin{enumerate}
+        \item 平面直角坐标系: 直接写成``(1cm, 2pt)'',未指定单位则默认1cm.
+        \item 极坐标系: 前面极角，后面极半径，冒号隔开``(30:1cm)''.
+        \item 相对坐标1: 两个加号代表改变当前相对位置的坐标.
+        \item 相对坐标2: 一个加号，代表不改变当前相对位置的坐标.
+    \end{enumerate}
+
+\section{11.2 指定路径的句法}
+    % 利用线段路径绘制三角形
+    \tikz \draw (5,0) -- (0,0) -- (0,5) -- cycle;
+
+\section{11.3 对路径的操作}
+\end{document}
