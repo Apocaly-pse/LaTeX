@@ -1,0 +1,19 @@
+\documentclass[]{ctexart}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes.misc}
+\begin{document}
+    $A \mathbin{\tikz [baseline]
+    \draw[->>] (0pt,.5ex) -- (3ex,.5ex);} B$
+
+% 你好呀\tikz[baseline] \draw (0,0) circle (.5ex);不好
+
+Hello
+\tikz[baseline=(a.base)]
+    \node [cross out, draw] (a) {World.};
+
+Top align:
+\tikz[baseline=(current bounding box.south)]
+    \draw (0,0) rectangle (1cm,1ex);
+
+\end{document}
