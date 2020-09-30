@@ -1,0 +1,15 @@
+\documentclass[]{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{babel}
+
+\begin{document}
+% 一个`\tikz`命令可以使用大括号包含多个命令
+    \tikz{
+        \draw (0,0) -- (2,2);
+        \draw (0,0) circle (2);
+        \draw (0,0) -- (2,-2);
+        \fill (0,0) circle (1.9);
+        \shade[] (0,0) circle (1.5);
+    }
+\end{document}
