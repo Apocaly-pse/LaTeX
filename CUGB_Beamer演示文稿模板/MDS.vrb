@@ -1,0 +1,18 @@
+\frametitle{\heiti 多维标度法的计算过程}
+^^I
+\pause
+
+^^I{\Large R程序如下：}
+^^I
+\pause
+\begin{lstlisting}[style=A]
+data <- openxlsx::read.xlsx("mvstats4.xlsx", sheet="d12.4", rowNames=T)
+# 生成距离阵(欧氏距离)
+D <- dist(data, method = "minkowski", p=2)
+# 计算非度量解
+MDS <- MASS::isoMDS(D); MDS
+plot(MDS$points[, 1:2], type = "n")
+abline(h=0, v=0, lty=3)
+text(MDS$points[, 1:2], adj=.5, labels=rownames(data))
+plot(MASS::Shepard(D, MASS::isoMDS(D)$points))
+\end{lstlisting}
