@@ -1,0 +1,39 @@
+\documentclass{standalone}
+
+% 导入绘图库
+\usepackage{tikz}
+% 导入箭头类型库
+\usetikzlibrary{arrows.meta}
+
+% 导入中文支持库
+\usepackage{ctex}
+
+
+\begin{document}
+
+\begin{tikzpicture}
+[]
+% 绘制辅助线网格
+\draw[help lines, step=2.5mm] (-3.5cm,-3.5cm) grid (3.5cm,3.5cm);
+
+
+% 绘制外圆(半径:10*2.5mm-.55mm=2.445cm)
+\draw[line width=1.1mm] (0,0) circle (2.445cm);
+% 绘制中圆(半径:7*2.5mm=1.75cm)
+\draw[line width=.5mm] (0,0) circle (1.75cm);
+% 绘制内圆(半径:4.7*2.5mm=1.175cm)
+\draw[line width=.5mm] (0,0) circle (1.175cm);
+
+% 中文校名
+\draw (0,2cm) node {\sffamily 中国地质大学};
+% 英文校名
+\draw (0,1cm) node {\sffamily CHINA UNIVERSITY OF GEOSCIENCES};
+% 建校时间
+\draw (0,-2cm) node {\sffamily 1952};
+
+
+% 绘制地质锤锤柄（底部圆角）
+\draw[-Round Cap, line width=2mm] (0,7.5mm) -- (0,-1.1cm);        
+\end{tikzpicture}
+
+\end{document}
