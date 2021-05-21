@@ -1,7 +1,2 @@
 \beamer@sectionintoc {1}{{\heiti 问题引入与背景简介}}{3}{0}{1}
-\beamer@sectionintoc {2}{{\sffamily MDS} {\heiti 的概念和方法}}{9}{0}{2}
-\beamer@sectionintoc {3}{{\sffamily MDS} {\heiti 的古典解}}{25}{0}{3}
-\beamer@sectionintoc {4}{{\sffamily MDS} {\heiti 非度量方法}}{85}{0}{4}
-\beamer@sectionintoc {5}{{\sffamily MDS} {\heiti 的计算过程}}{100}{0}{5}
-\beamer@sectionintoc {6}{\heiti 内容总结}{117}{0}{6}
-\beamer@sectionintoc {7}{\heiti 参考文献}{119}{0}{7}
+\beamer@sectionintoc {2}{\heiti 参考文献}{6}{0}{2}
