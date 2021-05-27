@@ -1,0 +1,78 @@
+\documentclass[tikz,border=3pt]{standalone}
+\usetikzlibrary{calc}
+\usetikzlibrary{intersections,through}
+
+\begin{document}
+    \begin{tikzpicture}[]
+        % AB, CD为圆的垂直中心线
+        \coordinate [label=below left:$A$] (A) at (0,0);
+        \coordinate [label=below right:$B$] (B) at (4,0);
+        \coordinate [label=above left:$C$] (C) at (2,2);
+        \coordinate [label=below right:$D$] (D) at (2,-2);
+        \coordinate [label=below right:$O$] (O) at (2,0);
+        \draw [name path=o] (O) circle (2);
+        \draw [densely dashed,-latex,name path=AB] ($(A)!-.1!(B)$) -- ($(A)!1.1!(B)$);
+        \draw [densely dashed,latex-,name path=CD] ($(C)!-.1!(D)$) -- ($(C)!1.1!(D)$);
+        \coordinate [label=below:$H$] (H) at ($(O)!.5!(B)$);
+        % 标记弧段
+        \path [name path=o1] 
+        let 
+            \p1=($ (H) - (C) $), 
+            \n2={veclen(\x1, \y1)}
+        in 
+            (H) circle (\n2);
+        % 找到交点G
+        \path [name intersections={of=o1 and AB}] 
+            coordinate [label=below right:$G$] (G) at (intersection-1);
+        \draw (G) -- (C);
+        \draw [-latex] (H) -- ($(H)!1.18!($(C)!.5!(G)$)$);
+        % 绘制弧段
+        \draw [red]
+        let 
+            \p1=($ (H) - (C) $), 
+            \n2={veclen(\x1, \y1)}
+        in 
+            (G) arc (180:110:\n2)
+            (G) arc (180:185:\n2);
+
+        % 找到其他点
+        \path [name path=o2]
+        let
+            \p2=($ (G) - (C) $),
+            \n2={veclen(\x2,\y2)}
+        in 
+            (C) circle (\n2);
+        \path [name intersections={of=o2 and o}]
+            coordinate [label=above left:$E$] (E) at (intersection-1);
+
+        \path [name path=o3]
+        let
+            \p2=($ (G) - (C) $),
+            \n2={veclen(\x2,\y2)}
+        in 
+            (E) circle (\n2);
+        \path [name intersections={of=o3 and o}]
+            coordinate [] (F) at (intersection-2);
+
+        \path [name path=o4]
+        let
+            \p2=($ (G) - (C) $),
+            \n2={veclen(\x2,\y2)}
+        in 
+            (F) circle (\n2);
+        \path [name intersections={of=o4 and o}]
+            coordinate [] (J) at (intersection-2);
+
+        \path [name path=o5]
+        let
+            \p2=($ (G) - (C) $),
+            \n2={veclen(\x2,\y2)}
+        in 
+            (J) circle (\n2);
+        \path [name intersections={of=o5 and o}]
+            coordinate [] (K) at (intersection-1);
+
+        % 绘制正五边形
+        \draw [thick] (C) -- (E) -- (F) -- (J) -- (K) -- cycle;
+    \end{tikzpicture}
+\end{document}
