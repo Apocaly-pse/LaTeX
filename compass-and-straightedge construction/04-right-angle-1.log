@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.5.19)  25 MAY 2021 22:13
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.5.19)  27 MAY 2021 15:46
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
-**01-divide-segment.tex
-(./01-divide-segment.tex
+**04-right-angle-1.tex
+(./04-right-angle-1.tex
 LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-05-11>
 (/usr/local/texlive/2021/texmf-dist/tex/latex/standalone/standalone.cls
@@ -383,58 +383,70 @@ File: tikzlibrarytopaths.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 s/tikzlibrarycalc.code.tex
 File: tikzlibrarycalc.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryintersections.code.tex
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/libraries/pgflibraryinterse
+ctions.code.tex
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.cod
+e.tex)
+\pgf@intersect@solutions=\count274
+))
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarythrough.code.tex
+File: tikzlibrarythrough.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
 File: l3backend-xetex.def 2021-05-07 L3 backend support: XeTeX
 
 (|extractbb --version)
-\c__kernel_sys_dvipdfmx_version_int=\count274
-\l__color_backend_stack_int=\count275
-\g__color_backend_stack_int=\count276
-\g__graphics_track_int=\count277
+\c__kernel_sys_dvipdfmx_version_int=\count275
+\l__color_backend_stack_int=\count276
+\g__color_backend_stack_int=\count277
+\g__graphics_track_int=\count278
 \l__pdf_internal_box=\box59
-\g__pdf_backend_object_int=\count278
-\g__pdf_backend_annotation_int=\count279
-\g__pdf_backend_link_int=\count280
-) (./01-divide-segment.aux)
-\openout1 = `01-divide-segment.aux'.
+\g__pdf_backend_object_int=\count279
+\g__pdf_backend_annotation_int=\count280
+\g__pdf_backend_link_int=\count281
+) (./04-right-angle-1.aux)
+\openout1 = `04-right-angle-1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 4.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 4
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 5.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 5
 .
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 7.
+(Font)              <7> on input line 8.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 7.
+(Font)              <5> on input line 8.
  [1
 
 ]
-(./01-divide-segment.aux) ) 
+(./04-right-angle-1.aux) ) 
 Here is how much of TeX's memory you used:
- 11974 strings out of 476765
- 250785 string characters out of 5819308
- 522056 words of memory out of 5000000
- 31939 multiletter control sequences out of 15000+600000
+ 12445 strings out of 476765
+ 263215 string characters out of 5819308
+ 532009 words of memory out of 5000000
+ 32398 multiletter control sequences out of 15000+600000
  403438 words of font info for 28 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 115i,5n,118p,432b,639s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 115i,5n,118p,431b,585s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 01-divide-segment.pdf (1 page).
+Output written on 04-right-angle-1.pdf (1 page).

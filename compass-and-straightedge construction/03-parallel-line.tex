@@ -1,0 +1,43 @@
+\documentclass[tikz, border=5pt]{standalone}
+% 用于计算点的坐标
+\usetikzlibrary{calc}
+% 用于计算交点
+\usetikzlibrary{intersections,through}
+
+\begin{document}
+\begin{tikzpicture}
+    % \draw[help lines] (-2,-2) grid (5,5);
+    % 绘制直线l
+    \coordinate [] (M) at (-.5,0); 
+    \coordinate [label=right:{$\ell$}] (N) at (3.5,0);
+    \draw[name path=l] (M) -- (N);
+
+    % 标记直线外一点A
+    \coordinate [label=above:$A$] (A) at (.5,1);
+    \fill (A) circle (1pt);
+
+    % 以大于$A$到$l$距离的长度为半径,以$A$为圆心画圆弧$r$,交直线$l$于$B$点.
+    \coordinate [label=above right:$D$] (D) at ($(A)+(1.25,0)$);
+    \draw[red] (D) arc (0:-60:1.25)
+               (D) arc (0:10:1.25);
+    \node[below right] (P) at (1.5,.5) {$r$};
+    \coordinate [name path=r,circle through=(D)] (r) at (A);
+
+    % 标记交点B
+    \path [name intersections={of=r and l}] 
+        coordinate [label=below left:$B$] (B) at (intersection-2);
+    \fill (B) circle (1pt);
+
+    % 以$B$为圆心,相同半径画圆弧,在相同方向上交直线$l$ 于$C$点.
+    \coordinate[label=below right:$C$] (C) at ($(B)+(1.25,0)$);
+    \draw [red] (C) arc (0:10:1.25)
+                (C) arc (0:-10:1.25);
+    \fill (C) circle (1pt);
+
+    % 以$C$为圆心,相同半径画圆弧,交圆弧$r$于$D$点（非$B$点）, 连接$AD$,则所作直线$AD$就是所求的直线.
+    \draw [red] (D) arc (127:137:1.25)
+                (D) arc (127:117:1.25);
+    \fill (D) circle (1pt);
+    \draw ($(A)!-.7!(D)$) -- ($(A)!1.75!(D)$);
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,53 @@
+\documentclass[tikz, border=5pt]{standalone}
+% 用于计算点的坐标
+\usetikzlibrary{calc}
+% 用于计算交点
+\usetikzlibrary{intersections,through}
+
+\begin{document}
+\begin{tikzpicture}
+
+    % \draw[step=1cm,very thin, gray] (-2,0) grid (3,-4);
+    \coordinate[label=above:$A$] (A) at (1,0);
+    \coordinate[label=below:$B$] (B) at (1,-4);
+
+    % 绘制并标记半圆为H
+    \draw (A) arc (90:270:2) coordinate [name path=H,circle through=(A)] (H) at ($(A)!.5!(B)$);
+
+    % 绘制线段AB
+    \path [draw] (A) -- (B);
+    % 以A,B为圆心, AB长为半径做圆弧
+    \draw let \p1=($ (A) - (B) $), \n2={veclen(\x1, \y1)}
+          in  (A) arc (90:20:\n2)
+              (B) arc (-90:-20:\n2);
+    % 标记两个圆弧段的位置
+    \node (D) [name path=D,circle through=(B)] at (A) {}; 
+    \node (E) [name path=E,circle through=(A)] at (B) {};
+
+    % 标记第二个交点为O 
+    \path [name intersections={of=D and E}] 
+        coordinate [label=right:$O$] (O) at (intersection-2);
+
+    % 循环绘制各交点: 这里需要分成两部分进行绘制
+    \foreach \i in {1,2}{
+        % 等分直径AB并做标记
+        \coordinate[label=above right:$\i$] (\i) at ($(A)!\i/5!(B)$);
+        % 作延长线(不绘制)
+        \path [name path=O--\i] (O) -- ($(O)!2!(\i)$);
+        % 标记交点
+        \path [name intersections={of=H and O--\i,by={\i'}}] 
+          coordinate[label=above left:$\i'$] (\i') at (intersection-2);
+        \draw (O) -- (\i');  
+}
+    \foreach \i in {3,4}{
+        % 等分直径AB并做标记
+        \coordinate[label=below right:$\i$] (\i) at ($(A)!\i/5!(B)$);
+        % 作延长线(不绘制)
+        \path [name path=O--\i] (O) -- ($(O)!2!(\i)$);
+        % 标记交点
+        \path [name intersections={of=H and O--\i,by={\i'}}] 
+          coordinate[label=below left:$\i'$] (\i') at (intersection-1);
+        \draw (O) -- (\i');  
+}
+\end{tikzpicture}
+\end{document}
