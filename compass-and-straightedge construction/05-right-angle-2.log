@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.5.19)  27 MAY 2021 15:46
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.5.19)  27 MAY 2021 17:53
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
-**04-right-angle-1.tex
-(./04-right-angle-1.tex
+**05-right-angle-2.tex
+(./05-right-angle-2.tex
 LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-05-11>
 (/usr/local/texlive/2021/texmf-dist/tex/latex/standalone/standalone.cls
@@ -407,8 +407,8 @@ File: l3backend-xetex.def 2021-05-07 L3 backend support: XeTeX
 \g__pdf_backend_object_int=\count279
 \g__pdf_backend_annotation_int=\count280
 \g__pdf_backend_link_int=\count281
-) (./04-right-angle-1.aux)
-\openout1 = `04-right-angle-1.aux'.
+) (./05-right-angle-2.aux)
+\openout1 = `05-right-angle-2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
@@ -433,20 +433,20 @@ LaTeX Font Info:    ... okay on input line 5.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 8.
+(Font)              <7> on input line 12.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 8.
+(Font)              <5> on input line 12.
  [1
 
 ]
-(./04-right-angle-1.aux) ) 
+(./05-right-angle-2.aux) ) 
 Here is how much of TeX's memory you used:
- 12445 strings out of 476765
- 263215 string characters out of 5819308
- 532009 words of memory out of 5000000
- 32398 multiletter control sequences out of 15000+600000
+ 12613 strings out of 476765
+ 266801 string characters out of 5819308
+ 545112 words of memory out of 5000000
+ 32566 multiletter control sequences out of 15000+600000
  403438 words of font info for 28 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 115i,5n,118p,431b,585s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 115i,5n,357p,431b,917s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 04-right-angle-1.pdf (1 page).
+Output written on 05-right-angle-2.pdf (1 page).

@@ -4,13 +4,32 @@
 
 \begin{document}
     \begin{tikzpicture}[]
-        % 绘制直线AB
-        \coordinate [label=left:$A$] (A) at (-.5,0);
-        \coordinate [label=right:$B$] (B) at (2.5,0);
-        \draw (A) -- (B);
-        % 标记圆心并画圆
-        \coordinate [label=above right:$O$] (O) at (1,1);
-        \draw (O) circle (1.25);
+        % 标记两点, 做直线
+        \coordinate (M) at (-.25,0);
+        \coordinate (N) at (2.25,0);
+        \draw [name path=AB] (M) -- (N);
 
+        \coordinate [label=below left:$A$] (A) at (0,0);
+        \coordinate [label=below right:$B$] (B) at (2,0);
+        \coordinate [label=left:$C$] (C) at (0,3.464102);
+        % 以A为圆心作圆弧
+        \draw (B) arc (0:65:2);
+        % 圆被标记为o1
+        \coordinate [name path=o1,circle through=(B)] (o1) at (A);
+        % 以B为圆心作圆弧
+        \coordinate (O) at (1,1.732051);
+        \draw (O) arc (120:115:2)
+              (O) arc (120:125:2);
+        % 圆被标记为o
+        \coordinate [name path=o2,circle through=(A)] (o2) at (B);
+        % 找交点并标记A,B
+        \path [name intersections={of=o1 and o2}] 
+            coordinate [label=above right:$O$] (O) at (intersection-1);
+        \draw ($(B)!-.05!(O)$) -- ($(B)!2.1!(O)$);
+        \draw (C) arc (120:115:2)
+              (C) arc (120:125:2);
+        \draw ($(C)!-.05!(A)$) -- ($(C)!1.05!(A)$);
+        % 标记直角
+        \draw (A) rectangle ($(A)+(.1,.1)$);
     \end{tikzpicture}
 \end{document}
