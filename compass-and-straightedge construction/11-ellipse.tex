@@ -1,0 +1,144 @@
+\documentclass[tikz,border=3pt]{standalone}
+% \usepackage{tkz-euclide} % 可用于绘制中垂线
+\usetikzlibrary{calc}
+\usetikzlibrary{intersections,through}
+\usetikzlibrary{decorations}
+
+\begin{document}
+    \begin{tikzpicture}[]
+        % 标记点A,B,C,D,O
+        \coordinate [label=below left:$A$] (A) at (0,0);
+        \coordinate [label=below right:$B$] (B) at (6,0);
+        \coordinate [label=above right:$C$] (C) at (3,1.5);
+        \coordinate [label=below right:$D$] (D) at (3,-1.5);
+        \coordinate [label=above right:$O$] (O) at (3,0);
+        % AB, CD互相垂直
+        \draw [densely dash dot,name path=AB] ($(A)!-.1!(B)$) -- ($(A)!1.1!(B)$);
+        \draw [densely dash dot,name path=CD] ($(C)!-1!(D)$) -- ($(C)!2!(D)$);
+
+        % 连接AC
+        \draw [name path=AC] (A) -- (C);
+        % 以O为圆心, OA为半径作圆弧交OC延长线于E
+        \path [name path=oAE]
+        let 
+            \p1=($(O)-(A)$),
+            \n1={veclen(\x1,\y1)}
+        in 
+            (O) circle (\n1);
+        \path [name intersections={of=CD and oAE}]
+            coordinate [label=below right:$E$] (E) at (intersection-1);
+        % 作圆弧
+        \draw [red] 
+        let 
+            \p1=($(O)-(A)$),
+            \n1={veclen(\x1,\y1)}
+        in 
+            (A) arc (180:88:\n1);
+
+        % 以C为圆心, CE为半径作圆弧与AC交于F
+        \path [name path=oEF]
+        let 
+            \p1=($(C)-(E)$),
+            \n1={veclen(\x1,\y1)}
+        in 
+            (C) circle (\n1);
+        \path [name intersections={of=AC and oEF}]
+            coordinate [label=below right:$F$] (F) at (intersection-1);
+        % 作圆弧
+        \draw [red] 
+        let 
+            \p1=($(C)-(E)$),
+            \n1={veclen(\x1,\y1)}
+        in 
+            (E) arc (90:215:\n1);
+
+        % 作AF的中垂线交CD延长线于G,交AB于H
+        % % 中垂线使用tkz-euclide包的mediator选项
+        % \tkzDefLine[mediator](A,F)
+        % \tkzGetPoints{G}{H}
+        % 这里采用尺规作图中的中垂线作法
+        \path [name path=oA]
+        let 
+            \p1=($(A)-(F)$),
+            \n1={veclen(\x1,\y1)}
+        in 
+            (A) circle (\n1);
+        \path [name path=oF]
+        let 
+            \p1=($(A)-(F)$),
+            \n1={veclen(\x1,\y1)}
+        in 
+            (F) circle (\n1);
+        % 找交点
+        \path [name intersections={of=oA and oF}]
+            coordinate [] (M) at (intersection-1)
+            coordinate [] (N) at (intersection-2);
+        % 作圆弧
+        \draw [red]
+        let 
+            \p1=($(A)-(F)$),
+            \n1={veclen(\x1,\y1)}
+        in 
+            (M) arc (147:157:\n1)
+            (M) arc (147:137:\n1)
+            (M) arc (86:96:\n1)
+            (M) arc (86:76:\n1)
+            (N) arc (-33:-43:\n1)
+            (N) arc (-33:-23:\n1)
+            (N) arc (-94:-104:\n1)
+            (N) arc (-94:-84:\n1);
+        \path [name path=MN] ($(M)!-.2!(N)$) -- ($(M)!-2.1!(N)$);
+        \path [draw,name path=GH] ($(M)!-.1!(N)$) -- ($(M)!2.1!(N)$);
+        \path [name intersections={of=GH and AB}]
+            coordinate [label=above right:$H$] (H) at (intersection-1);
+        \path [name intersections={of=GH and CD}]
+            coordinate [label=above right:$G$] (G) at (intersection-1);
+
+        % 标记弧段
+        \path [name path=oG] 
+        let 
+            \p1=($(O)-(G)$),
+            \n1={veclen(\x1,\y1)}
+        in 
+            (O) circle (\n1);
+        \path [name path=oH] 
+        let 
+            \p1=($(O)-(H)$),
+            \n1={veclen(\x1,\y1)}
+        in 
+            (O) circle (\n1);
+        % 找对称点G', H'
+        \path [name intersections={of=oG and CD}]
+            coordinate [label=above right:$G'$] (G') at (intersection-1);
+        \path [name intersections={of=oH and AB}]
+            coordinate [label=above right:$H'$] (H') at (intersection-1);
+        \fill (G) ellipse [x radius=1pt,y radius=.5pt]
+              (H) ellipse [x radius=.5pt,y radius=1pt]
+              (G') ellipse [x radius=1pt,y radius=.5pt]
+              (H') ellipse [x radius=.5pt,y radius=1pt];
+
+        % 绘制椭圆
+        % 以G, G'为圆心, GC为半径作圆弧
+        \draw [thick]
+        let 
+            \p2=($(G)-(C)$),
+            \n2={veclen(\x2,\y2)}
+        in 
+            (C) arc (90:61:\n2)
+            (C) arc (90:119:\n2)
+            (D) arc (-90:-61:\n2)
+            (D) arc (-90:-119:\n2);
+        % 以H, H'为圆心, HA为半径作圆弧
+        \draw [thick]
+        let 
+            \p2=($(H)-(A)$),
+            \n2={veclen(\x2,\y2)}
+        in 
+            (A) arc (180:232:\n2)
+            (A) arc (180:128:\n2)
+            (B) arc (0:52:\n2)
+            (B) arc (0:-52:\n2);
+            % (H) circle (\n2)
+            % (H') circle (\n2);
+    \end{tikzpicture}
+\end{document}

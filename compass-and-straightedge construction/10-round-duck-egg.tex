@@ -1,0 +1,72 @@
+\documentclass[tikz,border=3pt]{standalone}
+\usetikzlibrary{calc}
+\usetikzlibrary{intersections,through}
+
+\begin{document}
+    \begin{tikzpicture}[]
+        % 标记点A,C,D,O
+        \coordinate [label=below left:$A$] (A) at (0,0);
+        \coordinate [label={right=10pt}:$G$] (G) at (4,0);
+        \coordinate [label=above right:$C$] (C) at (2,2);
+        \coordinate [label=below right:$D$] (D) at (2,-2);
+        \coordinate [label=above right:$O$] (O) at (2,0);
+        % 圆o
+        \draw [name path=o] (O) circle (2);
+        % AB, CD互相垂直
+        % \draw [densely dashed,-latex,name path=AB] ($(A)!-.1!(B)$) -- ($(A)!1.1!(B)$);
+        \draw [densely dashed,latex-,name path=CD] ($(C)!-.1!(D)$) -- ($(C)!1.1!(D)$);
+
+        % 分别以D,C为圆心, DC长度为半径作圆弧交于B点
+        \path [name path=oCB]
+        let 
+            \p1=($(D)-(C)$),
+            \n1={veclen(\x1,\y1)}
+        in 
+            (D) circle (\n1);
+
+        \path [name path=oDB]
+        let 
+            \p1=($(D)-(C)$),
+            \n1={veclen(\x1,\y1)}
+        in 
+            (C) circle (\n1);
+        % 标记两圆弧的交点B
+        \path [name intersections={of=oCB and oDB}]
+            coordinate [label=below right:$B$] (B) at (intersection-1);
+        \draw [densely dashed,-latex,name path=AB] ($(A)!-.1!(B)$) -- ($(A)!1.1!(B)$);
+        % 绘制弧段
+        \draw [red,thick]
+        let 
+            \p1=($(D)-(C)$),
+            \n1={veclen(\x1,\y1)}
+        in 
+            (D) arc (-90:-25:\n1)
+            (C) arc (90:27:\n1);
+        \draw [black,thick]
+        let 
+            \p1=($(D)-(C)$),
+            \n1={veclen(\x1,\y1)}
+        in 
+            (D) arc (-90:-45:\n1)
+            (C) arc (90:45:\n1);
+
+        % 连接CG和DG交圆弧于E,F点
+        \path [name path=CG] (C) -- ($(C)!1.5!(G)$);
+        \path [name path=DG] (D) -- ($(D)!1.5!(G)$);
+        \path [name intersections={of=CG and oDB}] 
+            coordinate [label=below:$F$] (F) at (intersection-1);
+        \path [name intersections={of=DG and oCB}] 
+            coordinate [label=above:$E$] (E) at (intersection-1);
+        \draw (C) -- ($(C)!1.1!(F)$)
+              (D) -- ($(D)!1.1!(E)$);
+
+        % 以G为圆心, GE为半径作圆弧
+        \draw [thick]
+        let 
+            \p2=($(G)-(E)$),
+            \n2={veclen(\x2,\y2)}
+        in 
+            (E) arc (45:0:\n2)
+            (F) arc (-45:0:\n2);
+    \end{tikzpicture}
+\end{document}
