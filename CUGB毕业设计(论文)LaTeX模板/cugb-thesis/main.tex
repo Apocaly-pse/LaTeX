@@ -1,0 +1,67 @@
+\documentclass[]{Bachelor}
+\usepackage{fancyhdr}         
+ \fancypagestyle{plain}{
+\fancyhf{}
+\renewcommand{\footrulewidth}{0pt}  % 页脚线宽  
+\renewcommand{\headrulewidth}{0pt} %页眉线宽
+}
+\pagestyle{plain} 
+\hypersetup{
+colorlinks=true,
+linkcolor=black
+}    
+
+\begin{document}
+
+%%----------- 封面部分 ----------- %%
+  \stunum{1019171100}
+  \stuclass{10191711} % 新加入了一行, 班号
+  \czhtitle{这里写上你的中文题目}
+  \centitle{This is an English Title of your paper}
+  \cschool{数理学院}
+  \cmajor{数学与应用数学}
+  \cauthor{张三}
+  \cadvisor{李四}
+  \cjobtitle{教授}
+  \cdate{2021 年 6 月}
+
+  \maketitlepage            % 封面
+  \makestatement            % 申明
+
+%%----------- 前言部分 ----------- %%
+  \include{pages/abstract}  % 摘要
+  
+
+  \contents                 % 目录
+
+%%----------- 页眉页脚 ----------- %%
+  \newpage
+% 默认页面页眉页脚样式
+\fancypagestyle{plain}{
+\fancyhf{}                                                                                                                     
+\renewcommand{\headrulewidth}{1pt} %页眉线宽，设为0可以去页眉线
+\renewcommand{\footrulewidth}{0pt}  % 页脚线宽
+\fancyfoot[C]{\zihao{-5}\thepage}     
+\chead{中国地质大学（北京）20XX届本科毕业论文}       
+}
+\pagestyle{plain}                   % 设置页眉        
+
+%% ---------- 正文部分 ---------- %%
+
+  \include{pages/chapter1}
+  \include{pages/chapter2}
+  \include{pages/chapter3}
+  \include{pages/chapter4}
+
+
+%%----------- 结尾部分 ----------- %%
+  \clearpage
+  \phantomsection
+  \include{pages/result}    % 致谢
+  \addcontentsline{toc}{chapter}{参考文献}
+  \begin{spacing}{1.5}
+    {\zihao{5}\bibliography{ref/refs}}  % 参考文献
+  \end{spacing}
+
+
+\end{document}
