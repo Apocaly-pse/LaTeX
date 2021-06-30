@@ -1,0 +1,113 @@
+\documentclass[tikz,border=3pt]{standalone}
+\usetikzlibrary{calc}
+\usetikzlibrary{intersections,through}
+
+\begin{document}
+    \begin{tikzpicture}[]
+        % 作对角线AC, BD
+        \coordinate  (A)  at (0,32);
+        \coordinate  (C)  at (32,0);
+        \coordinate  (B)  at (0,0);
+        \coordinate  (D)  at (32,32);
+        \path [name path=AC] (A) -- (31,1);
+        \path [name path=BD] (B) -- (D);
+
+        %%%%%% 锤头 %%%%%%%
+        % 绘制锤把
+        \coordinate (E) at (28,0);
+        \coordinate (F) at (32,4);
+        \draw [name path=EF, very thick] (E) -- (F);
+        \draw [very thick] (E) -- (25.1,2.9);
+        \draw [very thick] (F) -- (29.1,6.9);
+
+        \draw [very thick] (21,7) -- (10.5,17.5);
+        \draw [very thick] (25,11) -- (14.5,21.5);
+
+        % 绘制锤头
+        \coordinate (G) at (7.5, 14.5);
+        \coordinate (H) at (18.5, 25.5);
+        \draw [very thick] (G) -- (10.5,17.5);
+        \draw [very thick] (H) -- (14.5,21.5);
+        \coordinate (I) at (3,19);
+        \coordinate (J) at (16, 28);
+        \draw [name path=GI, very thick] (G) -- (I);
+        \draw [name path=HJ, very thick] (H) -- (J);
+        \coordinate (L) at (11,27);
+        \draw [name path=IL, very thick] (I) -- (L);
+        \coordinate (K) at (12.7, 32);
+        \draw [name path=KJL, very thick]
+        let 
+            \p1=($(K)-(J)$),
+            \n1={veclen(\x1,\y1)}
+        in 
+            (J) arc (-49:-108:\n1);
+
+
+        %%%%%% 镰刀 %%%%%%%
+        % 绘制镰刀
+        \coordinate (M) at (16,16);
+        \coordinate (N) at (16,32);
+        \coordinate (O) at (16,0);
+        \coordinate (P) at (16,18);
+        \coordinate (Q) at (1,8);
+        \path [name path=GH] (G) -- (Q);
+        \coordinate (R) at (10,16.5);
+        \coordinate (T) at (15.5,16.5);
+        \coordinate (V) at (15.5,22);
+
+        \draw [very thick]
+        let 
+            \p1=($(M)-(N)$),
+            \n1={veclen(\x1, \y1)}
+        in 
+            (N) arc (90:-35:\n1)
+            (O) arc (270:305:\n1)
+            (O) arc (271:230.7:\n1)
+            (Q) arc (218:230.6:\n1);
+
+        \path [name path=RS] (R) -- (32,16.5);
+        \draw [name path=RNS, very thick]
+        let 
+            \p1=($(R)-(N)$),
+            \n1={veclen(\x1,\y1)}
+        in 
+            (N) arc (66.5:-20:\n1);
+
+        \path [name intersections={of=RNS and RS}]
+            coordinate (S) at (intersection-1);
+
+        \path [name path=TU]
+            (T) -- (15.5,0);
+        \draw [name path=TUS, very thick]
+        let 
+            \p1=($(T)-(S)$),
+            \n1={veclen(\x1,\y1)}
+        in 
+            (21,7) arc (305:272:\n1);
+
+        \path [name intersections={of=TUS and TU}]
+            coordinate (U) at (intersection-1);
+
+        \draw [name path=UVW, very thick] 
+        let 
+            \p1=($(U)-(V)$),
+            \n1={veclen(\x1,\y1)}
+        in 
+            (U) arc (268:222.3:\n1);
+        \path [name intersections={of=UVW and GH}]
+            coordinate (W) at (intersection-1);
+        \draw [very thick] (W) -- (Q);
+
+        % 绘制镰刀把
+        \coordinate (X) at (2.5,2.5);
+        \coordinate (Y) at (5,3);
+        \coordinate (Z) at (3,5); 
+        \draw [very thick] 
+            (2.5,5) arc (90:365:2.5)
+            (2.5,5) arc (90:79:2.5)
+            (5,2.5) arc (0:11:2.5) 
+            (2.94,4.94) -- (3.48,5.48)
+            (4.94,2.94) -- (5.6,3.6);
+
+    \end{tikzpicture}
+\end{document}
